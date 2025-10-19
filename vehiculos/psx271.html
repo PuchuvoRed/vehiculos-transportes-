@@ -643,8 +643,22 @@
         }
         
         function viewDocument(docName) {
-            alert('🔒 Accediendo al documento: ' + docName + '\n\nEn la implementación final, aquí se abrirá el PDF correspondiente.\n\nDebes subir los PDFs a la carpeta "documentos/" y actualizar los links en el código.');
-        }
+    const docs = {
+        'Acta Sanitaria': '../psx271-acta-sanitaria.pdf',
+        'Certificado Mantenimiento': '../psx271-certificado-mantenimiento.pdf',
+        'Manipulacion Alimentos': '../psx271-manipulacion-alimentos.pdf',
+        'Cédula': '../psx271-cedula-conductor.pdf',
+        'Licencia': '../psx271-licencia-conductor.pdf',
+        'SOAT': '../psx271-soat.pdf',
+        'Tarjeta de Propiedad': '../psx271-tarjeta-propiedad.pdf'
+    };
+    
+    if (docs[docName]) {
+        window.open(docs[docName], '_blank');
+    } else {
+        alert('📄 Documento no disponible aún');
+    }
+}
         
         document.getElementById('password').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
