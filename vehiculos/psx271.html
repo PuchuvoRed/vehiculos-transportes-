@@ -641,17 +641,24 @@
             document.getElementById('password').value = '';
             document.getElementById('errorMessage').classList.remove('show');
         }
-        
-        function viewDocument(docName) {
+
+    function viewDocument(docName) {
     const docs = {
-        'Acta Sanitaria': '../psx271-acta-sanitaria.pdf',
-        'Certificado Mantenimiento': '../psx271-certificado-mantenimiento.pdf',
-        'Manipulacion Alimentos': '../psx271-manipulacion-alimentos.pdf',
-        'Cédula': '../psx271-cedula-conductor.pdf',
-        'Licencia': '../psx271-licencia-conductor.pdf',
-        'SOAT': '../psx271-soat.pdf',
-        'Tarjeta de Propiedad': '../psx271-tarjeta-propiedad.pdf'
+        'Acta Sanitaria': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-acta-sanitaria.pdf',
+        'Certificado Mantenimiento': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-certificado-mantenimiento.pdf',
+        'Manipulacion Alimentos': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-manipulacion-alimentos.pdf',
+        'Cédula': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-cedula-conductor.pdf',
+        'Licencia': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-licencia-conductor.pdf',
+        'SOAT': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-soat.pdf',
+        'Tarjeta de Propiedad': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-tarjeta-propiedad.pdf'
     };
+    
+    if (docs[docName]) {
+        window.open(docs[docName], '_blank');
+    } else {
+        alert('📄 Documento no disponible aún');
+    }
+}
     
     if (docs[docName]) {
         window.open(docs[docName], '_blank');
