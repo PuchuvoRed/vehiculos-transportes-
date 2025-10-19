@@ -519,28 +519,28 @@
                         <li class="doc-item">
                             <div>
                                 <span class="doc-name">Tarjeta de Propiedad</span>
-                                <div class="status na">Por agregar</div>
+                                <div class="status vigente">Vigente (Matrícula: 15/08/2025)</div>
                             </div>
-                            <button class="btn-view" onclick="viewDocument('Tarjeta de Propiedad')" disabled style="opacity: 0.5; cursor: not-allowed;">No disponible</button>
-                            </li>
+                            <button class="btn-view" onclick="viewDocument('Tarjeta de Propiedad')">Ver PDF 📄</button>
+                        </li>
                         <li class="doc-item">
                             <div>
                                 <span class="doc-name">Acta de Inspección Sanitaria</span>
-                                <div class="status na">Por agregar</div>
+                                <div class="status vigente">Vigente (Concepto FAVORABLE)</div>
                             </div>
                             <button class="btn-view" onclick="viewDocument('Acta Sanitaria')">Ver PDF 📄</button>
                         </li>
                         <li class="doc-item">
                             <div>
-                                <span class="doc-name">Certificado de Mantenimiento</span>
-                                <div class="status na">Por agregar</div>
+                                <span class="doc-name">Certificado de Mantenimiento (Refrigeración)</span>
+                                <div class="status vigente">Vigente (Fecha: 06/10/2025)</div>
                             </div>
                             <button class="btn-view" onclick="viewDocument('Certificado Mantenimiento')">Ver PDF 📄</button>
                         </li>
                         <li class="doc-item">
                             <div>
                                 <span class="doc-name">Certificado de Manipulación de Alimentos</span>
-                                <div class="status na">Por agregar</div>
+                                <div class="status vigente">Vigente hasta: 26/03/2026</div>
                             </div>
                             <button class="btn-view" onclick="viewDocument('Manipulacion Alimentos')">Ver PDF 📄</button>
                         </li>
@@ -562,11 +562,11 @@
                             <div class="info-value">1.076.622.462</div>
                         </div>
                         <div class="info-item">
-                            <div class="info-label">Licencia</div>
+                            <div class="info-label">Licencia Pública (C3)</div>
                             <div class="info-value">1076622462</div>
                         </div>
                         <div class="info-item">
-                            <div class="info-label">Vigencia Licencia</div>
+                            <div class="info-label">Vigencia Licencia C3</div>
                             <div class="info-value">29/01/2028</div>
                         </div>
                     </div>
@@ -581,7 +581,7 @@
                         <li class="doc-item">
                             <div>
                                 <span class="doc-name">Licencia de Conducción</span>
-                                <div style="font-size: 12px; color: #718096; margin-top: 3px;">Vigente hasta: 29/01/2028</div>
+                                <div style="font-size: 12px; color: #718096; margin-top: 3px;">Vigente hasta: 29/01/2028 (Clase C3)</div>
                             </div>
                             <button class="btn-view" onclick="viewDocument('Licencia')">Ver PDF 📄</button>
                         </li>
@@ -612,7 +612,7 @@
             
             <div class="footer">
                 <p>🔒 Documento protegido - Acceso autorizado</p>
-                <p>Última actualización: 18 de octubre de 2025</p>
+                <p>Última actualización: 19 de octubre de 2025</p>
             </div>
         </div>
     </div>
@@ -644,25 +644,27 @@
 
         function viewDocument(docName) {
             const docs = {
-                'Acta Sanitaria': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-acta-sanitaria.pdf',
-                'Certificado Mantenimiento': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-certificado-mantenimiento.pdf',
-                'Manipulacion Alimentos': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-manipulacion-alimentos.pdf',
-                'Cédula': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-cedula-conductor.pdf',
-                'Licencia': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-licencia-conductor.pdf',
-                'SOAT': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-soat.pdf',
-                'Tarjeta de Propiedad': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-tarjeta-propiedad.pdf'
+                // Asegúrate de que estas URLs coincidan EXACTAMENTE con los archivos subidos.
+                'Acta Sanitaria': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-acta-sanitaria.pdf.pdf',
+                'Certificado Mantenimiento': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-certificado-mantenimiento.pdf.pdf',
+                'Manipulacion Alimentos': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-manipulacion-alimentos.pdf.pdf',
+                'Cédula': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-cedula-conductor.pdf.pdf',
+                'Licencia': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-licencia-conductor.pdf.pdf',
+                'SOAT': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-soat.pdf.pdf',
+                'Tarjeta de Propiedad': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-licencia-transito-psx271.pdf.pdf' // (Ajustada para reflejar el documento de Licencia de Tránsito)
             };
             
-            // Verifica si el botón está deshabilitado para evitar intentos de vista innecesarios.
-            if (docName === 'Tecnomecánica' || docName === 'Tarjeta de Propiedad') {
+            // Verificación para documentos NO DISPONIBLES (si hay más).
+            if (docName === 'Tecnomecánica') {
                  alert('⚠️ Este documento no está disponible o está pendiente de carga.');
                  return;
             }
             
+            // CORRECCIÓN: Si el documento tiene URL, la abre. El bloque 'else' se eliminó para evitar la alerta redundante.
             if (docs[docName]) {
                 window.open(docs[docName], '_blank');
             } else {
-                alert('📄 Documento no disponible aún');
+                 alert('⚠️ La URL para este documento (' + docName + ') no está definida en el código JavaScript.');
             }
         }
         
