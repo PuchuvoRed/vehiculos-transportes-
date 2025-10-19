@@ -521,8 +521,8 @@
                                 <span class="doc-name">Tarjeta de Propiedad</span>
                                 <div class="status na">Por agregar</div>
                             </div>
-                            <button class="btn-view" onclick="viewDocument('Tarjeta de Propiedad')">Ver PDF 📄</button>
-                        </li>
+                            <button class="btn-view" onclick="viewDocument('Tarjeta de Propiedad')" disabled style="opacity: 0.5; cursor: not-allowed;">No disponible</button>
+                            </li>
                         <li class="doc-item">
                             <div>
                                 <span class="doc-name">Acta de Inspección Sanitaria</span>
@@ -652,6 +652,12 @@
                 'SOAT': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-soat.pdf',
                 'Tarjeta de Propiedad': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-tarjeta-propiedad.pdf'
             };
+            
+            // Verifica si el botón está deshabilitado para evitar intentos de vista innecesarios.
+            if (docName === 'Tecnomecánica' || docName === 'Tarjeta de Propiedad') {
+                 alert('⚠️ Este documento no está disponible o está pendiente de carga.');
+                 return;
+            }
             
             if (docs[docName]) {
                 window.open(docs[docName], '_blank');
