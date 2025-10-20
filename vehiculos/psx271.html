@@ -642,14 +642,21 @@
             document.getElementById('errorMessage').classList.remove('show');
         }
 
-        function viewDocument(docName) {
-           const docs = {
-    'Acta Sanitaria': 'https://raw.githubusercontent.com/PuchuvoRed/vehiculos-transportes-/main/psx271-acta-sanitaria.pdf',
-    'Certificado Mantenimiento': 'https://raw.githubusercontent.com/PuchuvoRed/vehiculos-transportes-/main/psx271-certificado-mantenimiento.pdf',
-    'Manipulacion Alimentos': 'https://raw.githubusercontent.com/PuchuvoRed/vehiculos-transportes-/main/psx271-manipulacion-alimentos.pdf',
-    'Cédula': 'https://raw.githubusercontent.com/PuchuvoRed/vehiculos-transportes-/main/psx271-cedula-conductor.pdf',
-    'Licencia': 'https://raw.githubusercontent.com/PuchuvoRed/vehiculos-transportes-/main/psx271-licencia-conductor.pdf'
-};
+      function viewDocument(docName) {
+    const docs = {
+        'Acta Sanitaria': 'https://drive.google.com/file/d/13mhB2yaqvYM5f-C9hiKzkyWJ2pG4BA8d/preview',
+        'Certificado Mantenimiento': 'https://drive.google.com/file/d/1nByvfyG8je2D9Ur4HPbHTzdogob5HNVB/preview',
+        'Manipulacion Alimentos': 'https://drive.google.com/file/d/1ExyS-Siuv57KLIpURZSSIS-HaMZrufLK/preview',
+        'Cédula': 'https://drive.google.com/file/d/1Iy-XnY8aYDmDBIzzA4xt60PTilryUO_-/preview',
+        'Licencia': 'https://drive.google.com/file/d/1dlMlr7BU_WMymLyNx5y6oK6rmE21g7Nl/preview'
+    };
+    
+    if (docs[docName]) {
+        window.open(docs[docName], '_blank');
+    } else {
+        alert('📄 Documento no disponible aún');
+    }
+}
             
             // Verificación para documentos NO DISPONIBLES (si hay más).
             if (docName === 'Tecnomecánica') {
