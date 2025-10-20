@@ -643,16 +643,13 @@
         }
 
         function viewDocument(docName) {
-            const docs = {
-                // Asegúrate de que estas URLs coincidan EXACTAMENTE con los archivos subidos.
-                'Acta Sanitaria': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-acta-sanitaria.pdf.pdf',
-                'Certificado Mantenimiento': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-certificado-mantenimiento.pdf.pdf',
-                'Manipulacion Alimentos': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-manipulacion-alimentos.pdf.pdf',
-                'Cédula': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-cedula-conductor.pdf.pdf',
-                'Licencia': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-licencia-conductor.pdf.pdf',
-                'SOAT': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-soat.pdf.pdf',
-                'Tarjeta de Propiedad': 'https://puchuvored.github.io/vehiculos-transportes-/psx271-licencia-transito-psx271.pdf.pdf' // (Ajustada para reflejar el documento de Licencia de Tránsito)
-            };
+           const docs = {
+    'Acta Sanitaria': 'https://raw.githubusercontent.com/PuchuvoRed/vehiculos-transportes-/main/psx271-acta-sanitaria.pdf',
+    'Certificado Mantenimiento': 'https://raw.githubusercontent.com/PuchuvoRed/vehiculos-transportes-/main/psx271-certificado-mantenimiento.pdf',
+    'Manipulacion Alimentos': 'https://raw.githubusercontent.com/PuchuvoRed/vehiculos-transportes-/main/psx271-manipulacion-alimentos.pdf',
+    'Cédula': 'https://raw.githubusercontent.com/PuchuvoRed/vehiculos-transportes-/main/psx271-cedula-conductor.pdf',
+    'Licencia': 'https://raw.githubusercontent.com/PuchuvoRed/vehiculos-transportes-/main/psx271-licencia-conductor.pdf'
+};
             
             // Verificación para documentos NO DISPONIBLES (si hay más).
             if (docName === 'Tecnomecánica') {
